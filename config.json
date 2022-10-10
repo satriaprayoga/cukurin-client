@@ -1,0 +1,10 @@
+{
+    "appName": "cukurin-client",
+    "server":{
+        "run_mode": "debug",
+        "http_port": 9193,
+        "read_timeout": 600,
+        "write_timeout": 600,
+        "_comment": "debug or release"
+    }
+}
