@@ -15,8 +15,20 @@ type Server struct {
 	WriteTimeout time.Duration `mapstructure:"write_timeout"`
 }
 
+// Database:
+type Database struct {
+	Type        string `mapstructure:"type"`
+	Host        string `mapstructure:"host"`
+	Port        string `mapstructure:"port"`
+	User        string `mapstructure:"user"`
+	Password    string `mapstructure:"password"`
+	Name        string `mapstructure:"name"`
+	TablePrefix string `mapstructure:"table_prefix"`
+}
+
 type FileConfig struct {
-	Server *Server `mapstructure:"server"`
+	Server   *Server   `mapstructure:"server"`
+	Database *Database `mapstructure:"database"`
 }
 
 var FileConfigSetting = &FileConfig{}

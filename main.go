@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cukurin-client/pkg/dbpostgres"
 	"cukurin-client/pkg/setting"
 	"fmt"
 	"net/http"
@@ -11,6 +12,7 @@ import (
 func main() {
 	e := echo.New()
 	setting.Setup()
+	dbpostgres.Setup()
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello World")
 	})
